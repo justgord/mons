@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+var sys         = require('sys');
+var fs          = require('fs');
+var mons_api    = require('./mons_api');
+
+function usage()
+{
+    console.log('usage : monsget db.collection.docid.prop.array.N.element...');
+    process.exit(-1);
+}
+
+if (process.argv.length<3)
+    usage();
+
+var spath   = process.argv[2];
+
+
+function ondata(data)
+{
+    if (data)
+        console.log(JSON.stringify(data, null, "    "));
+}
+
+mons_api.get(spath, ondata);
+
+
