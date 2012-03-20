@@ -1,9 +1,10 @@
-
 Mongo Namespace : monsget / monsput
 ========
 
 The idea is to treat the whole of mongo datastore as a single namespaced heirarchy,
 where each piece of json can be addressed via a path.
+
+so all data can be addressed like : project.database.collection.objectid.property.arry.item.attribute.value
 
 This makes it easier to do shell scripting tasks with data,
 and can also be a nice interface to use within node.js programs.
